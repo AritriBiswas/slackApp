@@ -1,0 +1,4 @@
+to start with react:
+
+1. npx create-react-app apphere
+2. 

@@ -1,0 +1,50 @@
+fire base:
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyB16maSxZfZJ8YXatdK0HLUQUc9SrO6Y70",
+  authDomain: "testerdb-4e3ac.firebaseapp.com",
+  projectId: "testerdb-4e3ac",
+  storageBucket: "testerdb-4e3ac.appspot.com",
+  messagingSenderId: "234247831797",
+  appId: "1:234247831797:web:63db004eb86207730c05bc",
+  measurementId: "G-P3FZMBVBFK"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
+
+
+
+slackApp:
+
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyCnPW-C8Ymx4FCJ6_5kJVBB9aD4wHiHXQE",
+  authDomain: "slackdb-d4066.firebaseapp.com",
+  projectId: "slackdb-d4066",
+  storageBucket: "slackdb-d4066.appspot.com",
+  messagingSenderId: "161471380230",
+  appId: "1:161471380230:web:1c12b403384454eecafc87",
+  measurementId: "G-V087G23WSC"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
