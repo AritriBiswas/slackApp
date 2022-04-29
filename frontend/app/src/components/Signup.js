@@ -71,7 +71,7 @@ export default function Signup() {
           <Form className="mb-4" onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label></Form.Label>
-              <Form.Control type="email" ref={emailRef} required placeholder="name@work.com" />
+              <Form.Control type="email" ref={ emailRef } required placeholder="name@work.com" />
             </Form.Group>
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
