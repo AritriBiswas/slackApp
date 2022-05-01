@@ -1,17 +1,17 @@
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
-import { Link, useNavigate } from "react-router-dom"
+import { Link, useNavigate} from "react-router-dom"
 import { GoogleButton } from "react-google-button"
 
-export default function Signup() {
+export default function Signin() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const { googleSignIn } = useAuth()
   const { signin } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
-  const navigate = useNavigate();
+  let navigate = useNavigate();
   //const history = useHistory()
   async function handleSubmit(e) {
     e.preventDefault()
@@ -19,17 +19,21 @@ export default function Signup() {
     try{
         setError("")
         setLoading(true)
+        console.log("create")
         await signin(emailRef.current.value,passwordRef.current.value)
+        console.log("create")
         navigate("/Workspaces")
     }catch{
-        setError("Failed ro signin")
+        setError("Failed to signin")
     }
     }
 
     async function handleGoogleSignIn(e) {
       e.preventDefault();
       try{
+        console.log("create")
         await googleSignIn();
+        navigate("/Workspaces")
       }catch(error){
         console.log(error.message);
       }
@@ -62,10 +66,11 @@ export default function Signup() {
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
             
-            </Form>
+            
             <Button disabled={loading} style={{backgroundColor : 'purple', padding:'3px'}} className="w-100 " type="submit">
               Sign in with Email
             </Button>
+          </Form>
           
         </Card.Body>
       

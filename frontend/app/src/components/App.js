@@ -2,7 +2,7 @@
 import React from "react"
 import Signup from "./Signup"
 import Signin from "./Signin"
-//import Workspaces from "./Workspaces"
+import Workspaces from "./Workspaces"
 import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import { BrowserRouter as Router,  Route,Routes } from "react-router-dom"
@@ -25,7 +25,7 @@ function App() {
               {/* <PrivateRoute exact path="/" component={Dashboard} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} /> */}
               <Route path="/signup" element={<Signup/>} />
-              
+              <Route path="/Workspaces" element={<Workspaces/>} />
               <Route path="/signin" element={<Signin/>} />
               {/* <Route path="/forgot-password" component={ForgotPassword} /> */}
             </Routes>

@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
-import { Link, useNavigate} from "react-router-dom"
+import { Link,useNavigate} from "react-router-dom"
 import { GoogleButton } from "react-google-button"
 
 export default function Signup() {
@@ -21,7 +21,7 @@ export default function Signup() {
     
 
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      console.log("Signup")
+      console.log("unmatch password")
       return setError("Passwords do not match")
     }
 
@@ -30,6 +30,7 @@ export default function Signup() {
       setLoading(true)
       console.log("handlesubmit")
       await signup(emailRef.current.value, passwordRef.current.value)
+      console.log("create")
       navigate("/Workspaces")
       
 
@@ -38,6 +39,7 @@ export default function Signup() {
       setError("Failed to create an account")
 
     }
+   
 
     setLoading(false)
   }
@@ -81,10 +83,11 @@ export default function Signup() {
               <Form.Label>Password Confirmation</Form.Label>
               <Form.Control type="password" ref={passwordConfirmRef} required />
             </Form.Group>
-            </Form>
+            
             <Button disabled={loading} style={{backgroundColor : 'purple', padding:'3px'}} className="w-100 " type="submit">
               Sign up
             </Button>
+          </Form>
           
         </Card.Body>
       
