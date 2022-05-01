@@ -4,7 +4,7 @@ import {  Button, Card } from "react-bootstrap"
 // import { Link } from "react-router-dom"
 
 
-export default function Signup() {
+export default function Workspaces() {
 //   const emailRef = useRef()
 //   const passwordRef = useRef()
 //   const passwordConfirmRef = useRef()
