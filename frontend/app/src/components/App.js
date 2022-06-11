@@ -5,6 +5,7 @@ import Signin from "./Signin"
 import Workspaces from "./Workspaces"
 import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
+import { Header } from "./Header"
 import { BrowserRouter as Router,  Route,Routes } from "react-router-dom"
 //import Dashboard from "./Dashboard"
 //import Login from "./Login"
@@ -27,6 +28,8 @@ function App() {
               <Route path="/signup" element={<Signup/>} />
               <Route path="/Workspaces" element={<Workspaces/>} />
               <Route path="/signin" element={<Signin/>} />
+              <Route path="/Header" element={<Header/>} />
+
               {/* <Route path="/forgot-password" component={ForgotPassword} /> */}
             </Routes>
           </AuthProvider>
