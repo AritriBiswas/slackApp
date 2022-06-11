@@ -6,6 +6,8 @@ import Workspaces from "./Workspaces"
 //import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 import Header from "./Header"
+import Sidebar from "./Sidebar"
+import styled from "styled-components"
 import { BrowserRouter as Router,  Route,Routes } from "react-router-dom"
 //import Dashboard from "./Dashboard"
 //import Login from "./Login"
@@ -29,6 +31,9 @@ function App() {
               <Route path="/Workspaces" element={<Workspaces/>} />
               <Route path="/signin" element={<Signin/>} />
               <Route path="/Header" element={<Header/>} />
+              <Route path="/AppBody" element={<AppBody/>} />
+              <Route path="/Sidebar" element={<Sidebar/>} />
+
 
               {/* <Route path="/forgot-password" component={ForgotPassword} /> */}
             </Routes>
@@ -40,3 +45,7 @@ function App() {
 }
 
 export default App
+
+const AppBody = styled.div`
+
+`

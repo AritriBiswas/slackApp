@@ -13,6 +13,10 @@ function Header(){
             <HeaderSearch>
                 <input placeholder="Search"/>
             </HeaderSearch>
+
+            <HeaderRight>
+
+            </HeaderRight>
         </HeaderContainer>
 
         // <div>Hello</div>
@@ -56,6 +60,13 @@ align-item: center;
  
 
 `;
+
+const HeaderRight = styled.div`
+flex: 0.3;
+display: flex;
+align-items: flex-end;
+
+`
 
 // const HeaderAvatar = styled(Avatar)`
 
