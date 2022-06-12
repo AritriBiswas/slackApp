@@ -1,13 +1,19 @@
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+//import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useNavigate} from "react-router-dom"
+import styled from "styled-components"
 import { GoogleButton } from "react-google-button"
+import "./Signin.css"
+import logo from "../assets/slack-logo-icon.png"
 
 export default function Signin() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const { googleSignIn } = useAuth()
+
+
+  
   const { signin } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
@@ -45,41 +51,74 @@ export default function Signin() {
   return (
     <>
       
-        <Card.Body>
-          <h4 className="text-center mb-4">slack</h4>
-          <h3 className="text-center mb-4">Sign into Slack</h3>
+        <Body>
+          <Portion>
+            <img src={logo} alt="logo"/>
+            <h4>slack</h4>
+          </Portion>
+          <Body>
+          <h3 className='content'>Sign into Slack</h3>
           
+          </Body>
+          {/* {error && <Alert variant="danger">{error}</Alert>} */}
 
-          {error && <Alert variant="danger">{error}</Alert>}
+          <GoogleButton style={{ margin : 'auto'}}className="content" onClick = {handleGoogleSignIn}>Continue with Google</GoogleButton>
+          <p className="content">OR</p>
 
-          <GoogleButton className="g-btn d-flex align-item-center mb-4" onClick = {handleGoogleSignIn}>Continue with Google</GoogleButton>
-          <p className="text-center">OR</p>
-
-        
-          <Form className="mb-4" onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label></Form.Label>
-              <Form.Control type="email" ref={emailRef} required placeholder="name@work.com" />
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
+        <FormBody>
+          <form className="content" onSubmit={handleSubmit}>
+            {/* <Form.Group id="email"> */}
+              {/* <Form.Label></Form.Label> */}
+              <input className="content" type="email" ref={emailRef} required placeholder="name@work.com" />
+            {/* </Form.Group> */}
+            <input id="password"/>
+              <label className="content">Password</label>
+              <input className='content' type="password" ref={passwordRef} required />
+            {/* </Form.Group> */}
             
             
-            <Button disabled={loading} style={{backgroundColor : 'purple', padding:'3px'}} className="w-100 " type="submit">
+            <submit style={{margin:"20px"}} className='content' disabled={loading} style={{backgroundColor : 'purple', padding:'3px'}} 
+             type="submit">
               Sign in with Email
-            </Button>
-          </Form>
-          
-        </Card.Body>
+            </submit>
+          </form>
+          </FormBody>
+       
       
-      <div className="w-100 text-center mt-2">
+      <div style={{ padding: "20px"}} className='content'>
         Already using Slack? 
-        <div className="text-center">
+        <div className='content'>
           <Link to="/login">Sign In to an existing workspace</Link>
         </div>
       </div>
+      
+      </Body>
     </>
   )
   }
+
+  const Portion = styled.div`
+     display:flex;
+    margin: auto;
+    justify-content: center;
+
+
+    >img {
+      height: 40px;
+      padding : 10px;
+
+    }
+  `;
+
+  const Body = styled.div`
+    text-align : center;
+    
+`;
+const FormBody = styled.div`
+margin : auto;
+width : 178px;
+`;
+
+
+
+

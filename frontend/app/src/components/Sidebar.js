@@ -1,15 +1,18 @@
 import React from "react";
 import styled from "styled-components"
 import SidebarOption from "./SidebarOption";
+// import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecordIcon"
 
 
 function Sidebar(){
     return(
-        <SidebarContainer>
+        <SidebarContainer style={{"background-color": "blue"}}>
             <SidebarHeader>
                 <Sidebarinfo>
+                    
                     <h2>GLUG</h2>
-                    <h3>Aritri</h3>
+                    <h3>Aritri Biswas</h3>
+                
                 </Sidebarinfo>
             </SidebarHeader>
 
@@ -22,12 +25,12 @@ function Sidebar(){
 export default Sidebar;
 
 const SidebarContainer = styled.div`
-background-color: blue;
-flex: 0.3;
-max-width: 260px;
-border-top: 1px solid black;
-
-margin-top: 60px;
+    background-color: blue;
+    flex: 0.3;
+    max-width: 260px;
+    border-top: 1px solid black;
+    color : white;
+    margin-top: 60px;
 
 
 `;
@@ -47,7 +50,7 @@ flex: 1;
     font-weight : 900;
     margin-bottom : 5px;
 }
-
+ 
 >h3{
     display:flex;
     font-size: 13px;

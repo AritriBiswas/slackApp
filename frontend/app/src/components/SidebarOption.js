@@ -34,3 +34,7 @@ cursor: pointer;
 
 
 `;
+
+const SidebarOptionChannel = styled.div`
+
+`
