@@ -77,7 +77,7 @@ export default function Signin() {
             {/* </Form.Group> */}
             
             
-            <submit style={{margin:"20px"}} className='content' disabled={loading} style={{backgroundColor : 'purple', padding:'3px'}} 
+            <submit className='content' disabled={loading} style={{backgroundColor : 'purple',margin:"20px", padding:'3px'}} 
              type="submit">
               Sign in with Email
             </submit>
@@ -97,7 +97,7 @@ export default function Signin() {
   )
   }
 
-  const Portion = styled.div`
+const newLocal = `
      display:flex;
     margin: auto;
     justify-content: center;
@@ -108,7 +108,8 @@ export default function Signin() {
       padding : 10px;
 
     }
-  `;
+  `
+  const Portion = styled.divnewLocal;
 
   const Body = styled.div`
     text-align : center;

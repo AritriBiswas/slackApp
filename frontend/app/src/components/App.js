@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react"
 import Signup from "./Signup"
 import Signin from "./Signin"
 import Workspaces from "./Workspaces"
+import { Switch } from "react-router";
 //import { Container } from "react-bootstrap"
 import { AuthProvider } from "../contexts/AuthContext"
 // import { useAuthState } from "react-firebase-hooks/auth"
@@ -47,8 +48,9 @@ function App() {
               <Route path="/signin" element={<Signin/>} />
                 
               <Route path="/Header" element={<Header/>} />
+                {/* <AppBody/> */}
                 
-                
+              
 
 
               {/* <Route path="/forgot-password" component={ForgotPassword} /> */}

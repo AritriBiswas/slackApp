@@ -76,25 +76,25 @@ export default function Signup() {
           <p style={{ 'text-align' : 'center'}}>OR</p>
 
         <Formbody>
-          <form className="mb-4"  onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label></Form.Label>
-              <Form.Control type="email" ref={ emailRef } required placeholder="name@work.com" />
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control type="password" ref={ passwordRef} required />
-            </Form.Group>
-            <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control type="password" ref={passwordConfirmRef} required />
-            </Form.Group>
+          
+            <form id="email">
+              
+              <input style={{width: '260px'}} type="email" ref={ emailRef } required placeholder="name@work.com" />
+            </form>
+            <form id="password">
+              <label>Password</label>
+              <input style={{width: '260px'}} type="password" ref={ passwordRef} required />
+            </form>
+            <form id="password-confirm">
+              <label>Password Confirmation</label>
+              <input style={{width: '260px'}} type="password" ref={passwordConfirmRef} required />
+            </form>
             
-            <Button disabled={loading} style={{backgroundColor : 'purple', padding:'3px',margin:'10px' ,"border-radius": "5px" , color:"white" }} className="w-100 " type="submit">
+            <submit onSubmit={handleSubmit} disabled={loading} style={{backgroundColor : 'purple', padding:'12px',margin:' 14px 0px 34px 0px' ,"border-radius": "5px" , color:"white" }} type="submit">
               Sign up
-            </Button>
+            </submit>
            
-          </form>
+          
         </Formbody>
           
         
@@ -120,6 +120,8 @@ export default function Signup() {
 
     }
 
+    
+
   `;
 
   const Body2 = styled.div`
@@ -129,7 +131,19 @@ export default function Signup() {
 
   const Formbody = styled.div`
     margin : auto;
-    width : 178px;
+    width : 270px;
+
+    // >input{
+    //   display:flex;
+    //   align-item: center;
+    // }
+
+    >submit{
+      display: flex;
+      margin : 60px 59px 95px 101px;
+      justify-content: center;
+      cursor: pointer;
+    }
   `;
 
   const CardBody = styled.div`

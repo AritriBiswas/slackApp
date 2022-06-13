@@ -1,27 +1,35 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components"
+import Sidebar from "./Sidebar"
+import SidebarOption from "./SidebarOption";
+import { faUser } from "@fortawesome/free-solid-svg-icons"
 
 
 function Header(){
     return(
-        <HeaderContainer style={{'background-color' : "purple"}}>
-            <p style={{color:"black"}}>hello there</p>
-            <HeaderLeft style={{'background-color' : "purple"}}>
-                {/* <h1>hello</h1>
-                <h2>hello there</h2> */}
+
+        <>
+        <HeaderContainer style={{'backgroundColor' : "rgb(66, 1, 66)"}}>
+            <FontAwesomeIcon style={{color:'white'}} icon={faUser}></FontAwesomeIcon>
+            {/* <p style={{color:"black"}}></p> */}
+            <HeaderLeft style={{'backgroundColor' : "rgb(66, 1, 66)"}}>
+                
             </HeaderLeft>
 
             <HeaderSearch>
                 <input placeholder="Search"/>
             </HeaderSearch>
 
-            <HeaderRight style={{'background-color' : "blue"}}>
+            <HeaderRight style={{'backgroundColor' : "rgb(66, 1, 66)"}}>
 
             </HeaderRight>
         </HeaderContainer>
+            <Sidebar/>
+            
 
-        // <div>Hello</div>
-
+        
+        </>
     );
 }
 
@@ -33,41 +41,45 @@ const HeaderContainer = styled.div`
      width : 100%;
      align-items : center;
      justify-content : space-between;
-     bakground-color: purple;
+     bakground-color:rgb(66, 1, 66);
      
     
 `;
 
 const HeaderLeft = styled.div`
-     display : flex;
+display : flex;
     
 
     flex : 0.3;
-    baclkground-color : blue;
+    baclkground-color : rgb(66, 1, 66);
      align-items: center;
     display: flex;
     padding : 0 50px;
-     margin-left : 20px;
+    margin: 0px 0px 0px -7px;
 `;
 
 const HeaderSearch = styled.div`
 display: flex;
 flex:0.4;
-opacity  1;
-border-radius : 6px;
+opacity : 1;
+border-radius : 9px;
+border: 2px solid rgb(218, 136, 218);
 align-item: center;
  text-align: center;
  justify-content: center;
- 
+ background-color: rgb(83, 1, 83);
 
+ >input{
+    background-color:transparent;
+    border:none;
+ }
 `;
 
 const HeaderRight = styled.div`
 flex: 0.3;
 display: flex;
 align-items: flex-end;
-
-`
+`;
 
 // const HeaderAvatar = styled(Avatar)`
 
