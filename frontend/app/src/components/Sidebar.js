@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components"
-import { storage,db } from "../firebase"
+import { db } from "../firebase"
 // import FontawesomeIcons from "./FontawesomeIcons";
 // import { FontawesomeIcons } from "@fortawesome/react-fontawesome"
 import { faCoffee, faPlus, faAngleRight } from "@fortawesome/free-solid-svg-icons"
@@ -9,18 +9,18 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecordIcon"
 
 
-function Sidebar(){
+function Sidebar(addChannelOption){
 
-    async function handleClick(e) {
-        e.preventDefault();
-        try{
-          
-        //   navigate("/Header")
-        }catch(error){
-          console.log(error.message);
-        }
-    
-      }
+   const addChannel = () =>{
+    const channelName = prompt("Enter the channelname ")
+    if (channelName){
+        db.collection('rooms').add({
+            name : channelName,
+        })
+    }
+   }
+   const selectChannel = () => {}
+
 
     return(
         <SidebarContainer style={{"backgroundColor": "rgb(66, 1, 66)"}}>
@@ -47,7 +47,7 @@ function Sidebar(){
                     </Body2>
 
                     <Body2>
-                    <FontAwesomeIcon  style={{padding:"12px 0px 0px 11px"}} icon = {faPlus} ></FontAwesomeIcon>
+                    <FontAwesomeIcon  onClick={addChannelOption ? addChannel : selectChannel} style={{padding:"12px 0px 0px 11px"}} icon = {faPlus} ></FontAwesomeIcon>
                     <p style={{padding: '12px', margin:"-2px 0px 0px -2px", cursor:"pointer"}}>Add Channel</p>
                     </Body2>
             
